@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcxtblu32am6n"]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_eo02t"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_eo02t")
+
+[node name="Universe Screen" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -73.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "Universe"

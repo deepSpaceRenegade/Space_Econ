@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1xh54ervyxv4"]
+
+[ext_resource type="Texture2D" uid="uid://bdsbxacbxrq6g" path="res://textures/star_white.png" id="1_0mk31"]
+[ext_resource type="Texture2D" uid="uid://bwdtvcgsnxq4q" path="res://textures/star_red.png" id="2_2crfk"]
+[ext_resource type="Script" path="res://scripts/star.gd" id="3_kw8t3"]
+
+[node name="Star" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_0mk31")
+texture_pressed = ExtResource("2_2crfk")
+script = ExtResource("3_kw8t3")

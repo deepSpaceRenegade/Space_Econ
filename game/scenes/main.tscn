@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://bx2ungnv8v808"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_i03io"]
+[ext_resource type="PackedScene" uid="uid://bnjktyj6n3hmv" path="res://scenes/control_panel.tscn" id="2_vajgb"]
+[ext_resource type="PackedScene" uid="uid://b1xh54ervyxv4" path="res://scenes/star.tscn" id="3_ypqki"]
+[ext_resource type="Texture2D" uid="uid://bwdtvcgsnxq4q" path="res://textures/star_red.png" id="4_hb60t"]
+[ext_resource type="Texture2D" uid="uid://bdsbxacbxrq6g" path="res://textures/star_white.png" id="5_62tfn"]
+[ext_resource type="PackedScene" uid="uid://b7ytw6de7r88e" path="res://scenes/galaxy.tscn" id="6_hcuwf"]
+[ext_resource type="PackedScene" uid="uid://dcxtblu32am6n" path="res://scenes/hud.tscn" id="8_e4mhp"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_i03io")
+
+[node name="Control_Panel" parent="." instance=ExtResource("2_vajgb")]
+visible = false
+
+[node name="HUD" parent="." instance=ExtResource("8_e4mhp")]
+
+[node name="Star" parent="." instance=ExtResource("3_ypqki")]
+offset_left = 95.0
+offset_top = 255.0
+offset_right = 159.0
+offset_bottom = 319.0
+
+[node name="Star2" parent="." instance=ExtResource("3_ypqki")]
+offset_left = 230.0
+offset_top = 280.0
+offset_right = 294.0
+offset_bottom = 344.0
+
+[node name="Star3" parent="." instance=ExtResource("3_ypqki")]
+visible = false
+offset_left = 463.0
+offset_top = 285.0
+offset_right = 527.0
+offset_bottom = 349.0
+texture_normal = ExtResource("4_hb60t")
+texture_pressed = ExtResource("5_62tfn")
+
+[node name="Star4" parent="." instance=ExtResource("3_ypqki")]
+visible = false
+offset_left = 595.0
+offset_top = 282.0
+offset_right = 659.0
+offset_bottom = 346.0
+texture_normal = ExtResource("4_hb60t")
+texture_pressed = ExtResource("5_62tfn")
+
+[node name="Galaxy" parent="." instance=ExtResource("6_hcuwf")]
+visible = false
+offset_left = 238.0
+offset_top = 167.0
+offset_right = 302.0
+offset_bottom = 231.0
+
+[node name="Galaxy2" parent="." instance=ExtResource("6_hcuwf")]
+visible = false
+offset_left = 444.0
+offset_top = 170.0
+offset_right = 508.0
+offset_bottom = 234.0

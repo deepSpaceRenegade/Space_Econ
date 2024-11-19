@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0yf2sv2dllbj"]
+
+[ext_resource type="Script" path="res://scenes/planet.gd" id="2_lf1im"]
+[ext_resource type="Texture2D" uid="uid://bho5kealh4yrr" path="res://textures/planet_white.png" id="2_s1v7g"]
+
+[node name="Planet" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_pressed = ExtResource("2_s1v7g")
+script = ExtResource("2_lf1im")
