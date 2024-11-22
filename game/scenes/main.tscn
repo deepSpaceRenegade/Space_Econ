@@ -1,12 +1,27 @@
-[gd_scene load_steps=8 format=3 uid="uid://bx2ungnv8v808"]
+[gd_scene load_steps=13 format=3 uid="uid://bx2ungnv8v808"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_i03io"]
 [ext_resource type="PackedScene" uid="uid://bnjktyj6n3hmv" path="res://scenes/control_panel.tscn" id="2_vajgb"]
 [ext_resource type="PackedScene" uid="uid://b1xh54ervyxv4" path="res://scenes/star.tscn" id="3_ypqki"]
 [ext_resource type="Texture2D" uid="uid://bwdtvcgsnxq4q" path="res://textures/star_red.png" id="4_hb60t"]
 [ext_resource type="Texture2D" uid="uid://bdsbxacbxrq6g" path="res://textures/star_white.png" id="5_62tfn"]
+[ext_resource type="Script" path="res://scripts/planet_info.gd" id="5_ef4nc"]
 [ext_resource type="PackedScene" uid="uid://b7ytw6de7r88e" path="res://scenes/galaxy.tscn" id="6_hcuwf"]
+[ext_resource type="Texture2D" uid="uid://mf4yp8be4mk1" path="res://textures/planet_blue.png" id="6_uanir"]
+[ext_resource type="Texture2D" uid="uid://caymicx8ltd4j" path="res://textures/planet_green.png" id="7_qvd1b"]
 [ext_resource type="PackedScene" uid="uid://dcxtblu32am6n" path="res://scenes/hud.tscn" id="8_e4mhp"]
+
+[sub_resource type="Resource" id="Resource_qkspo"]
+script = ExtResource("5_ef4nc")
+texture = ExtResource("6_uanir")
+planet_name = "blue"
+planet_population = 100
+
+[sub_resource type="Resource" id="Resource_pyadm"]
+script = ExtResource("5_ef4nc")
+texture = ExtResource("7_qvd1b")
+planet_name = "green"
+planet_population = 200
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_i03io")
@@ -21,12 +36,14 @@ offset_left = 95.0
 offset_top = 255.0
 offset_right = 159.0
 offset_bottom = 319.0
+planets_list = Array[ExtResource("5_ef4nc")]([SubResource("Resource_qkspo")])
 
 [node name="Star2" parent="." instance=ExtResource("3_ypqki")]
 offset_left = 230.0
 offset_top = 280.0
 offset_right = 294.0
 offset_bottom = 344.0
+planets_list = Array[ExtResource("5_ef4nc")]([SubResource("Resource_pyadm")])
 
 [node name="Star3" parent="." instance=ExtResource("3_ypqki")]
 visible = false

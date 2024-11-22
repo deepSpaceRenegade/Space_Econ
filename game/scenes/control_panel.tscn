@@ -1,43 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://bnjktyj6n3hmv"]
+[gd_scene load_steps=4 format=3 uid="uid://bnjktyj6n3hmv"]
 
 [ext_resource type="Theme" uid="uid://bntnkew0b7xww" path="res://resources/space_theme.tres" id="1_1de6g"]
 [ext_resource type="Script" path="res://scripts/control_panel.gd" id="1_jec0b"]
 [ext_resource type="PackedScene" uid="uid://d0yf2sv2dllbj" path="res://scenes/planet.tscn" id="2_3ywjd"]
-[ext_resource type="Script" path="res://scripts/planet_info.gd" id="2_o458e"]
-[ext_resource type="Texture2D" uid="uid://mf4yp8be4mk1" path="res://textures/planet_blue.png" id="3_n3f4v"]
-[ext_resource type="Texture2D" uid="uid://dwy7l6cksgwgc" path="res://textures/planet_red.png" id="4_q3fxs"]
-[ext_resource type="Texture2D" uid="uid://caymicx8ltd4j" path="res://textures/planet_green.png" id="5_75djm"]
-[ext_resource type="Texture2D" uid="uid://1ba65vs5hkat" path="res://textures/planet_yellow.png" id="7_el1x1"]
-
-[sub_resource type="Resource" id="Resource_tdasv"]
-script = ExtResource("2_o458e")
-texture = ExtResource("3_n3f4v")
-planet_name = "Blue"
-planet_population = 1000
-
-[sub_resource type="Resource" id="Resource_te35b"]
-script = ExtResource("2_o458e")
-texture = ExtResource("4_q3fxs")
-planet_name = "Red"
-planet_population = 2000
-
-[sub_resource type="Resource" id="Resource_wfqcu"]
-script = ExtResource("2_o458e")
-texture = ExtResource("5_75djm")
-planet_name = "Green"
-planet_population = 3000
-
-[sub_resource type="Resource" id="Resource_bj4jc"]
-script = ExtResource("2_o458e")
-texture = ExtResource("7_el1x1")
-planet_name = "Yellow"
-planet_population = 0
 
 [node name="Control_Panel" type="CanvasLayer"]
 script = ExtResource("1_jec0b")
 planet = ExtResource("2_3ywjd")
-planets_list = Array[ExtResource("2_o458e")]([SubResource("Resource_tdasv"), SubResource("Resource_te35b"), SubResource("Resource_wfqcu")])
-planets_list2 = Array[ExtResource("2_o458e")]([SubResource("Resource_bj4jc")])
 
 [node name="Control_Panel_Container" type="PanelContainer" parent="."]
 anchors_preset = 8
