@@ -13,3 +13,5 @@ offset_left = -73.0
 offset_bottom = 31.0
 grow_horizontal = 0
 text = "Universe"
+
+[connection signal="pressed" from="Universe Screen" to="." method="_on_universe_screen_pressed"]

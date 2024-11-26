@@ -8,3 +8,5 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture_pressed = ExtResource("2_s1v7g")
 script = ExtResource("2_lf1im")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -10,3 +10,5 @@ offset_bottom = 40.0
 texture_normal = ExtResource("1_0mk31")
 texture_pressed = ExtResource("2_2crfk")
 script = ExtResource("3_kw8t3")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
