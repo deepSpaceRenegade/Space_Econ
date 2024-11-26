@@ -1,6 +1,7 @@
 extends TextureButton
 
-@export var planets_list: Array[PlanetInfo]
+@export var planets_list: Array[Planet]
+#@export var planet:Planet
 
 @onready var star: TextureButton = $"."
 @onready var planet_scene = preload("res://scenes/planet.tscn")
@@ -16,6 +17,12 @@ func open_control_panel():
 func spawn_planets(list):
 	for child in ControlPanel.planet_box.get_children():
 		child.queue_free()
+
+	#var planet_instance = planet_scene.instantiate()
+	#planet_instance.texture_normal = planet.texture
+	#planet_instance.name = planet.planet_name
+	#ControlPanel.planet_box.add_child(planet_instance)
+	
 	for info in list:
 		var planet_instance = planet_scene.instantiate()
 		planet_instance.texture_normal = info.texture
@@ -29,4 +36,5 @@ func _process(delta: float) -> void:
 
 func _on_pressed() -> void:
 	open_control_panel()
-	spawn_planets(star.planets_list)
+	spawn_planets(planets_list)
+	#print(planets_list)

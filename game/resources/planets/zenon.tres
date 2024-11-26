@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Planet" load_steps=3 format=3 uid="uid://dsqko4bx7772l"]
+
+[ext_resource type="Script" path="res://scripts/planet_info.gd" id="1_n0atr"]
+[ext_resource type="Texture2D" uid="uid://bghwc1dfpfax" path="res://textures/planet_teal.png" id="2_wucbg"]
+
+[resource]
+script = ExtResource("1_n0atr")
+texture = ExtResource("2_wucbg")
+planet_name = "Zenon"
+planet_population = 300

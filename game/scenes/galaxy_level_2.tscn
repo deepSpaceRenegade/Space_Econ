@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfxc8poetd0n6"]
+[gd_scene load_steps=7 format=3 uid="uid://cfxc8poetd0n6"]
 
 [ext_resource type="PackedScene" uid="uid://b1xh54ervyxv4" path="res://scenes/star.tscn" id="1_vdude"]
 [ext_resource type="Texture2D" uid="uid://bwdtvcgsnxq4q" path="res://textures/star_red.png" id="2_1teln"]
 [ext_resource type="Texture2D" uid="uid://bdsbxacbxrq6g" path="res://textures/star_white.png" id="3_2vxp3"]
+[ext_resource type="Script" path="res://scripts/planet_info.gd" id="4_omc4e"]
+[ext_resource type="Resource" uid="uid://dp7txr7v4h2tk" path="res://resources/planets/venus.tres" id="5_jqxyv"]
+[ext_resource type="Resource" uid="uid://dsqko4bx7772l" path="res://resources/planets/zenon.tres" id="6_h2tlj"]
 
 [node name="Galaxy" type="Node2D"]
 
@@ -13,6 +16,7 @@ offset_right = 63.0
 offset_bottom = 65.0
 texture_normal = ExtResource("2_1teln")
 texture_pressed = ExtResource("3_2vxp3")
+planets_list = Array[ExtResource("4_omc4e")]([ExtResource("5_jqxyv")])
 
 [node name="Star2" parent="." instance=ExtResource("1_vdude")]
 offset_left = 66.0
@@ -20,3 +24,4 @@ offset_right = 130.0
 offset_bottom = 64.0
 texture_normal = ExtResource("2_1teln")
 texture_pressed = ExtResource("3_2vxp3")
+planets_list = Array[ExtResource("4_omc4e")]([ExtResource("6_h2tlj")])

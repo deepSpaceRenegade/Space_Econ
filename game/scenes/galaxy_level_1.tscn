@@ -1,36 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://dldyj4y24oswl"]
+[gd_scene load_steps=5 format=3 uid="uid://dldyj4y24oswl"]
 
 [ext_resource type="PackedScene" uid="uid://b1xh54ervyxv4" path="res://scenes/star.tscn" id="1_33b2i"]
 [ext_resource type="Script" path="res://scripts/planet_info.gd" id="2_dys1c"]
-[ext_resource type="Texture2D" uid="uid://mf4yp8be4mk1" path="res://textures/planet_blue.png" id="3_rynpp"]
-[ext_resource type="Texture2D" uid="uid://cyknnuamjdheh" path="res://textures/planet_purple.png" id="4_bmspo"]
-[ext_resource type="Texture2D" uid="uid://caymicx8ltd4j" path="res://textures/planet_green.png" id="4_fjor3"]
-
-[sub_resource type="Resource" id="Resource_gsm55"]
-script = ExtResource("2_dys1c")
-texture = ExtResource("3_rynpp")
-planet_name = "Blue"
-planet_population = 100
-
-[sub_resource type="Resource" id="Resource_x0yv5"]
-script = ExtResource("2_dys1c")
-texture = ExtResource("4_bmspo")
-planet_name = "Purple"
-planet_population = 300
-
-[sub_resource type="Resource" id="Resource_1xs12"]
-script = ExtResource("2_dys1c")
-texture = ExtResource("4_fjor3")
-planet_name = "Green"
-planet_population = 200
+[ext_resource type="Resource" uid="uid://bxtk7sgvkgipn" path="res://resources/planets/sol.tres" id="3_g6jc1"]
+[ext_resource type="Resource" uid="uid://bx8mybp26gm3u" path="res://resources/planets/mars.tres" id="4_gfx5c"]
 
 [node name="Galaxy" type="Node2D"]
 
 [node name="Star" parent="." instance=ExtResource("1_33b2i")]
-planets_list = Array[ExtResource("2_dys1c")]([SubResource("Resource_gsm55"), SubResource("Resource_x0yv5")])
+planets_list = Array[ExtResource("2_dys1c")]([ExtResource("3_g6jc1")])
 
 [node name="Star2" parent="." instance=ExtResource("1_33b2i")]
 offset_left = 85.0
 offset_right = 149.0
 offset_bottom = 64.0
-planets_list = Array[ExtResource("2_dys1c")]([SubResource("Resource_1xs12")])
+planets_list = Array[ExtResource("2_dys1c")]([ExtResource("4_gfx5c")])

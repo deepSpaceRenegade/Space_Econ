@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Planet" load_steps=3 format=3 uid="uid://bx8mybp26gm3u"]
+
+[ext_resource type="Script" path="res://scripts/planet_info.gd" id="1_fmgkk"]
+[ext_resource type="Texture2D" uid="uid://dwy7l6cksgwgc" path="res://textures/planet_red.png" id="2_d1kmf"]
+
+[resource]
+script = ExtResource("1_fmgkk")
+texture = ExtResource("2_d1kmf")
+planet_name = "Mars"
+planet_population = 300

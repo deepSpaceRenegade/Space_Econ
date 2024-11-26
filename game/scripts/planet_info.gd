@@ -1,5 +1,5 @@
 extends Resource
-class_name PlanetInfo
+class_name Planet
 
 @export var texture: Texture2D
 @export var planet_name: String

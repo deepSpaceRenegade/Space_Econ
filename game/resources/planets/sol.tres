@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Planet" load_steps=3 format=3 uid="uid://bxtk7sgvkgipn"]
+
+[ext_resource type="Script" path="res://scripts/planet_info.gd" id="1_prst0"]
+[ext_resource type="Texture2D" uid="uid://1ba65vs5hkat" path="res://textures/planet_yellow.png" id="2_gew2x"]
+
+[resource]
+script = ExtResource("1_prst0")
+texture = ExtResource("2_gew2x")
+planet_name = "Sol"
+planet_population = 100
