@@ -10,12 +10,10 @@ func _process(delta: float) -> void:
 	pass
 
 func calculate_population():
-	if $/root/Galaxy:
-		var stars = $/root/Galaxy.get_children()
-		for star in stars:
-			for info in star.planets_list:
-				info.planet_population += 100
-				print(info.planet_population)
+	var stars = $/root/Galaxy/Stars.get_children()
+	for star in stars:
+		for info in star.planets_list:
+			info.planet_population += 100
 
 
 func _on_end_turn_button_pressed() -> void:

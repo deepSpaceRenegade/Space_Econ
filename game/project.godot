@@ -15,13 +15,6 @@ run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[autoload]
-
-Signals="*res://scripts/signals.gd"
-SceneLoader="*res://scripts/scene_loader.gd"
-ControlPanel="*res://scenes/control_panel.tscn"
-Hud="*res://scenes/hud.tscn"
-
 [display]
 
 window/size/viewport_width=800
