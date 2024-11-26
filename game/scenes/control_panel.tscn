@@ -63,3 +63,5 @@ offset_right = 187.5
 grow_horizontal = 2
 grow_vertical = 0
 text = "close"
+
+[connection signal="pressed" from="Control_Panel_Container/Control_Panel/Close_Button" to="." method="_on_close_button_pressed"]

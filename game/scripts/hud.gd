@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-@onready var universe_screen: Button = $"Universe Screen"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,6 +9,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func calculate_population():
+	if $/root/Galaxy:
+		var stars = $/root/Galaxy.get_children()
+		for star in stars:
+			for info in star.planets_list:
+				info.planet_population += 100
+				print(info.planet_population)
 
-func _on_universe_screen_pressed() -> void:
-	SceneLoader.load_scene("res://scenes/universe_level.tscn") # Replace with function body.
+
+func _on_end_turn_button_pressed() -> void:
+	calculate_population()
