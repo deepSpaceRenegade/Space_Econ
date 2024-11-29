@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://co3nny6gxnxfe"]
+
+[ext_resource type="Script" path="res://scripts/response_text.gd" id="1_yrok2"]
+
+[node name="ResponseText" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 14
+text = "Some text"
+autowrap_mode = 2
+script = ExtResource("1_yrok2")

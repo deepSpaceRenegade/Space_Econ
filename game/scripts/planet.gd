@@ -1,7 +1,7 @@
 extends TextureButton
 
 @onready var planet: TextureButton = $"."
-@onready var control_panel = $/root/Galaxy/ControlPanel
+@onready var control_panel = $/root/Main/ControlPanel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,7 +18,7 @@ func show_info():
 	var info_label = Label.new()
 	control_panel.info_box.add_child(info_label)
 	
-	var stars = $/root/Galaxy/Stars.get_children()
+	var stars = $/root/Main/Stars.get_children()
 	for star in stars:
 		for info in star.planets_list:
 			if info.planet_name == planet.name:

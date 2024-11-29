@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvcih0eqkn6vg"]
+
+[ext_resource type="Script" path="res://scripts/console.gd" id="1_d2bxj"]
+[ext_resource type="Script" path="res://scripts/input.gd" id="1_wbh7d"]
+[ext_resource type="Script" path="res://scripts/command_processor.gd" id="2_xy3bn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ijk05"]
+
+[node name="Console" type="CanvasLayer"]
+script = ExtResource("1_d2bxj")
+
+[node name="CommandProcessor" type="Node" parent="."]
+script = ExtResource("2_xy3bn")
+
+[node name="ConsoleContainer" type="PanelContainer" parent="."]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -264.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ConsoleMargins" type="MarginContainer" parent="ConsoleContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ConsoleRows" type="VBoxContainer" parent="ConsoleContainer/ConsoleMargins"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ConsoleDisplay" type="PanelContainer" parent="ConsoleContainer/ConsoleMargins/ConsoleRows"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ConsoleScroll" type="ScrollContainer" parent="ConsoleContainer/ConsoleMargins/ConsoleRows/ConsoleDisplay"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="DisplayRows" type="VBoxContainer" parent="ConsoleContainer/ConsoleMargins/ConsoleRows/ConsoleDisplay/ConsoleScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InputArea" type="PanelContainer" parent="ConsoleContainer/ConsoleMargins/ConsoleRows"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="InputColumns" type="HBoxContainer" parent="ConsoleContainer/ConsoleMargins/ConsoleRows/InputArea"]
+layout_mode = 2
+
+[node name="Caret" type="Label" parent="ConsoleContainer/ConsoleMargins/ConsoleRows/InputArea/InputColumns"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = " > "
+
+[node name="Input" type="LineEdit" parent="ConsoleContainer/ConsoleMargins/ConsoleRows/InputArea/InputColumns"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 14
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ijk05")
+script = ExtResource("1_wbh7d")
+
+[connection signal="text_submitted" from="ConsoleContainer/ConsoleMargins/ConsoleRows/InputArea/InputColumns/Input" to="." method="_on_input_text_submitted"]
+[connection signal="text_submitted" from="ConsoleContainer/ConsoleMargins/ConsoleRows/InputArea/InputColumns/Input" to="ConsoleContainer/ConsoleMargins/ConsoleRows/InputArea/InputColumns/Input" method="_on_text_submitted"]

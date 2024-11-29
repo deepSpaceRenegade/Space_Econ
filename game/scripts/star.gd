@@ -5,7 +5,7 @@ extends TextureButton
 
 @onready var star: TextureButton = $"."
 @onready var planet_scene: PackedScene = preload("res://scenes/planet.tscn")
-@onready var control_panel = $/root/Galaxy/ControlPanel
+@onready var control_panel = $/root/Main/ControlPanel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
