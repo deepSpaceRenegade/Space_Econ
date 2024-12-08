@@ -1,7 +1,6 @@
 extends Node
 
-
-func process(input:String) -> String:
+func process_commands(input:String) -> String:
 	var words = input.split(" ", false)
 	if words.size() == 0:
 		return "Enter 'commands' to get a list of commands"
@@ -11,18 +10,16 @@ func process(input:String) -> String:
 	
 	if words.size() > 1:
 		second_word = words[1].to_lower()
-	print(first_word, second_word)
-	
+
 	match first_word:
 		"commands":
-			return "This is a list of commands."
+			return "help 'command', launch.ship 'star name'"
 		"help":
 			return help(second_word)
 		_:
 			return "Invalid command: enter 'commands' for a list of valid commands"
 
 	return "something went wrong"
-
 
 func help(second_word:String) -> String:
 	if second_word == "":
@@ -33,4 +30,3 @@ func help(second_word:String) -> String:
 			return "Enter 'help' followed by a command."
 		_:
 			return "Invalid command"
-		

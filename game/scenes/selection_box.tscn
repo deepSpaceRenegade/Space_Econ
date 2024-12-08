@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxuw86i1bbjkw"]
+
+[ext_resource type="Texture2D" uid="uid://b6g6623xjux18" path="res://textures/selection_box.png" id="1_olhxd"]
+[ext_resource type="Script" path="res://scenes/selection_box.gd" id="2_dewlp"]
+
+[node name="SelectionBox" type="NinePatchRect"]
+offset_right = 8.0
+offset_bottom = 8.0
+texture = ExtResource("1_olhxd")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+script = ExtResource("2_dewlp")

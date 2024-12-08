@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://chi3l8sbjx5dj"]
+
+[ext_resource type="PackedScene" uid="uid://b1xh54ervyxv4" path="res://scenes/star.tscn" id="1_ehqfh"]
+[ext_resource type="PackedScene" uid="uid://d0yf2sv2dllbj" path="res://scenes/planet.tscn" id="2_1hk36"]
+
+[node name="SolarSystem" type="Node2D"]
+
+[node name="Star" parent="." instance=ExtResource("1_ehqfh")]
+position = Vector2(500, 360)
+
+[node name="Planet" parent="." instance=ExtResource("2_1hk36")]
+position = Vector2(501, 238)
+
+[node name="Planet2" parent="." instance=ExtResource("2_1hk36")]
+position = Vector2(501, 136)

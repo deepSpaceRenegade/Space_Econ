@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdvea4mrgh4gw"
-path="res://.godot/imported/galaxy_blue.png-2e78d4b566142dcf99c2a076a0c07521.ctex"
+uid="uid://cb13kw7ddc3p4"
+path="res://.godot/imported/ship.png-8e6b5342d64cd5c3ee827016033df284.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/galaxy_blue.png"
-dest_files=["res://.godot/imported/galaxy_blue.png-2e78d4b566142dcf99c2a076a0c07521.ctex"]
+source_file="res://textures/ship.png"
+dest_files=["res://.godot/imported/ship.png-8e6b5342d64cd5c3ee827016033df284.ctex"]
 
 [params]
 

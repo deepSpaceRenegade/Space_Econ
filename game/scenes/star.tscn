@@ -1,14 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1xh54ervyxv4"]
+[gd_scene load_steps=5 format=3 uid="uid://b1xh54ervyxv4"]
 
 [ext_resource type="Texture2D" uid="uid://bdsbxacbxrq6g" path="res://textures/star_white.png" id="1_0mk31"]
-[ext_resource type="Texture2D" uid="uid://bwdtvcgsnxq4q" path="res://textures/star_red.png" id="2_2crfk"]
 [ext_resource type="Script" path="res://scripts/star.gd" id="3_kw8t3"]
+[ext_resource type="PackedScene" uid="uid://llgsmm2f7cs4" path="res://scenes/ship_spawner.tscn" id="4_yhjc4"]
 
-[node name="Star" type="TextureButton"]
-offset_right = 40.0
-offset_bottom = 40.0
-texture_normal = ExtResource("1_0mk31")
-texture_pressed = ExtResource("2_2crfk")
+[sub_resource type="CircleShape2D" id="CircleShape2D_ov2vg"]
+
+[node name="Star" type="Sprite2D" groups=["stars"]]
+texture = ExtResource("1_0mk31")
 script = ExtResource("3_kw8t3")
 
-[connection signal="pressed" from="." to="." method="_on_pressed"]
+[node name="ShipSpawner" parent="." instance=ExtResource("4_yhjc4")]
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ov2vg")

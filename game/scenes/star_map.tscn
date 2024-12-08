@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ov3fi8kgpx5g"]
+
+[ext_resource type="PackedScene" uid="uid://b1xh54ervyxv4" path="res://scenes/star.tscn" id="1_bom8c"]
+
+[node name="StarMap" type="Node2D"]
+
+[node name="Star" parent="." instance=ExtResource("1_bom8c")]
+position = Vector2(127, 78)
+
+[node name="Star2" parent="." instance=ExtResource("1_bom8c")]
+position = Vector2(374, 79)

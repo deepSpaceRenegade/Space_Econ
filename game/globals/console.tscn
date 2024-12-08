@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvcih0eqkn6vg"]
+[gd_scene load_steps=6 format=3 uid="uid://dvcih0eqkn6vg"]
 
 [ext_resource type="Script" path="res://scripts/console.gd" id="1_d2bxj"]
 [ext_resource type="Script" path="res://scripts/input.gd" id="1_wbh7d"]
 [ext_resource type="Script" path="res://scripts/command_processor.gd" id="2_xy3bn"]
+[ext_resource type="Script" path="res://scripts/end_turn_button.gd" id="3_wajlb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ijk05"]
 
@@ -43,6 +44,7 @@ horizontal_scroll_mode = 0
 [node name="DisplayRows" type="VBoxContainer" parent="ConsoleContainer/ConsoleMargins/ConsoleRows/ConsoleDisplay/ConsoleScroll"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 10
 
 [node name="InputArea" type="PanelContainer" parent="ConsoleContainer/ConsoleMargins/ConsoleRows"]
 custom_minimum_size = Vector2(0, 30)
@@ -50,6 +52,12 @@ layout_mode = 2
 
 [node name="InputColumns" type="HBoxContainer" parent="ConsoleContainer/ConsoleMargins/ConsoleRows/InputArea"]
 layout_mode = 2
+
+[node name="EndTurnButton" type="Button" parent="ConsoleContainer/ConsoleMargins/ConsoleRows/InputArea/InputColumns"]
+layout_mode = 2
+focus_mode = 0
+text = "End Turn"
+script = ExtResource("3_wajlb")
 
 [node name="Caret" type="Label" parent="ConsoleContainer/ConsoleMargins/ConsoleRows/InputArea/InputColumns"]
 layout_mode = 2
@@ -61,7 +69,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 14
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ijk05")
+placeholder_text = "enter command"
+caret_blink = true
 script = ExtResource("1_wbh7d")
 
+[connection signal="pressed" from="ConsoleContainer/ConsoleMargins/ConsoleRows/InputArea/InputColumns/EndTurnButton" to="ConsoleContainer/ConsoleMargins/ConsoleRows/InputArea/InputColumns/EndTurnButton" method="_on_pressed"]
 [connection signal="text_submitted" from="ConsoleContainer/ConsoleMargins/ConsoleRows/InputArea/InputColumns/Input" to="." method="_on_input_text_submitted"]
 [connection signal="text_submitted" from="ConsoleContainer/ConsoleMargins/ConsoleRows/InputArea/InputColumns/Input" to="ConsoleContainer/ConsoleMargins/ConsoleRows/InputArea/InputColumns/Input" method="_on_text_submitted"]
